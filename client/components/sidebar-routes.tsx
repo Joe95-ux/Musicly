@@ -38,7 +38,7 @@ export const SidebarRoutes = () => {
           href={route.href}
         />
       ))}
-      <Separator />
+      <Separator className="mb-4"  />
       {customRoutes.map((route) => (
         <SidebarItem
           key={route.href}
