@@ -59,3 +59,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+body {
+  color: hsl(var(--foreground));
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}

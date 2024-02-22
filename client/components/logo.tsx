@@ -24,7 +24,7 @@ function Logo() {
           width={30}
         />
         <p className={cn(
-          "text-lg text-slate-50 pt-1",
+          "text-lg text-foreground dark:text-slate-100 pt-1",
           headingFont.className,
         )}>
           Musicly
