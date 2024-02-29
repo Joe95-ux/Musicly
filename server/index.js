@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
+import generalRoutes from "./routes/generalRoutes.js";
 
 
 // Configuration
@@ -19,6 +20,8 @@ app.use(morgan("common"));
 app.use(cors());
 
 // routes
+app.use("/general",  generalRoutes )
+
 
 //Mongodb setup
 
