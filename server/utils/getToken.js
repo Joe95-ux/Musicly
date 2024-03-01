@@ -1,3 +1,5 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
 const client_id = process.env.SPOTIFY_CLIENT_ID;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
 
@@ -15,9 +17,13 @@ export async function getToken() {
           Buffer.from(client_id + ":" + client_secret).toString("base64"),
       },
     });
+    const data = await response.json();
+    const access_token = await data.access_token;
 
-    return await response.json();
+    return access_token;
   } catch (error) {
     console.log(error);
   }
 }
+
+getToken()

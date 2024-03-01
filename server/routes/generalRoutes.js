@@ -1,8 +1,9 @@
 import express from "express";
-import { getCategories } from "../controllers/general";
+import { getNewReleases, getAlbumTracks } from "../controllers/general.js";
 const router = express.Router();
 
+router.get("/new-albums/:id", getAlbumTracks);
+router.get("/new-albums", getNewReleases );
 
-router.get("/categories", getCategories );
 
 export default router;
