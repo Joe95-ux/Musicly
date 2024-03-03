@@ -10,7 +10,7 @@ export const getNewReleases = async (req, res) => {
         headers: { Authorization: "Bearer " + token },
       }
     );
-    
+
     const categories = await data.json();
     res.status(200).json(categories);
   } catch (error) {
@@ -36,3 +36,21 @@ export const getAlbumTracks = async (req, res)=>{
     console.log(error)
   }
 }
+
+export const getAudioBooks = async (req, res) => {
+  try {
+    const token = await getToken();
+    const data = await fetch(
+      "https://api.spotify.com/v1/audiobooks",
+      {
+        method: "GET",
+        headers: { Authorization: "Bearer " + token },
+      }
+    );
+    
+    const categories = await data.json();
+    res.status(200).json(categories);
+  } catch (error) {
+    console.log(error);
+  }
+};
