@@ -54,3 +54,21 @@ export const getAudioBooks = async (req, res) => {
     console.log(error);
   }
 };
+
+export const search = async (req, res) =>{
+  try {
+    const token = await getToken();
+    const data = await fetch(
+      "https://api.spotify.com/v1/search?q=remaster%2520track%3ADoxy%2520artist%3AMiles%2520Davis&type=album",
+      {
+        method: "GET",
+        headers: { Authorization: "Bearer " + token },
+      }
+    );
+    
+    const result = await data.json();
+    res.status(200).json(result);
+  } catch (error) {
+    console.log(error);
+  }
+}
